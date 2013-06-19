@@ -4,7 +4,7 @@ $(function() {
     e.preventDefault();
     var tweetData = $('form#tweetas').serialize();
     $.ajax ({
-      url: '/new/tweet',
+      url: '/tweet',
       type: 'post',
       data: tweetData,
       beforeSend: function() {

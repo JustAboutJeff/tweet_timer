@@ -27,15 +27,24 @@ def current_user
   end
 end
 
-def twitter_client
-  if session[:user_id]
-    @twitter_client ||= Twitter::Client.new(
-      oauth_token: current_user.oauth_token,
-      oauth_token_secret: current_user.oauth_secret
-    )
-  end
-end
-
 def logged_in?
   !current_user.nil?
 end
+
+# def job_is_complete(jid)
+#   waiting = Sidekiq::Queue.new
+#   working = Sidekiq::Workers.new
+#   return false if waiting.find { |job| job.jid == jid }
+#   return false if working.find { |worker, info| info["payload"]["jid"] == jid }
+#   true
+# end
+
+def job_is_complete(jid)
+  waiting = Sidekiq::Queue.new
+  working = Sidekiq::Workers.new
+  pending = Sidekiq::ScheduledSet.new
+  return false if pending.find { |job| job.jid == jid }
+  return false if waiting.find { |job| job.jid == jid }
+  return false if working.find { |worker, info| info["payload"]["jid"] == jid }
+  true
+end 
