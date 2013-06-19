@@ -24,7 +24,9 @@ end
 post '/new/tweet' do
   twitter_client.update(params[:body])
   current_user.tweets << Tweet.new(params)
-  unless request.xhr?
+  if request.xhr?
+    break
+  else
     erb :tweet
   end
 end
