@@ -16,8 +16,13 @@ gem 'activerecord'
 
 gem 'rake'
 
+# oauth for twitter login and twitter ruby helper gem
 gem 'oauth'
 gem 'twitter'
+
+# sidekiq and redis for background job processing
+gem 'sidekiq'
+gem 'redis'
 
 group :development, :test do
   gem 'faker'

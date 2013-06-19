@@ -6,4 +6,10 @@ class User < ActiveRecord::Base
                            uniqueness: true
   validates :oauth_secret, presence: true,
                            uniqueness: true
+
+  def tweet(status)
+    tweet = tweets.create!(:status => status)
+    TweetWorker.perform_async(tweet.id)
+  end
+
 end
