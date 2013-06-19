@@ -22,17 +22,16 @@ get '/auth' do
 end
 
 post '/tweet' do
-  # current_user.twitter_client.update(params[:body])
-  # current_user.tweets << Tweet.new(params)
-  current_user.tweet(params[:body])
   if request.xhr?
-    break
+    current_user.tweet(params[:body])
   else
+    current_user.tweet(params[:body])
     erb :tweet
   end
 end
 
 get '/tweet/:job_id' do
-  job_is_complete(params[:job_id])
-  # return the status of a job to an AJAX call
+  job_is_complete?(params[:job_id])
 end
+
+

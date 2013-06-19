@@ -9,3 +9,21 @@ button a {
   text-decoration: none;
   color: black;
 }
+
+form#tweetForm > textarea {
+  max-width: 98%;
+  min-width: 98%;
+}
+
+form#tweetForm > p {
+  text-align: center;
+}
+
+form#tweetForm  input[type=submit] {
+  width: 10em;
+}
+
+div.response {
+  text-align: center;
+}
+

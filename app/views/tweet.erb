@@ -2,14 +2,14 @@
   <h1>Tweet as @<%= current_user.username %></h1>
   <p><a href="/sign_out">Sign Out</a></p>
 
-  <form id="tweetas" method="post" action="/new/tweet">
-    <textarea autofocus name='body' style='max-width: 98%; min-width: 98%' placeholder="Enter your tweet here..."></textarea>
-    <p style='text-align: center;'>
-    <input type='submit' style='width: 10em;'>
+  <form id="tweetForm" method="post" action="/tweet">
+    <textarea autofocus name='body' placeholder="Enter your tweet here..."></textarea>
+    <p>
+    <input type='submit'>
     </p>
   </form>
 
-  <div class='response' style='text-align: center'>
+  <div class='response'>
   </div>
 
 </div>
