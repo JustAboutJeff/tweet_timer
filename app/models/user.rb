@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
   validates :oauth_secret, presence: true,
                            uniqueness: true
 
-  def tweet(body)
-    tweet = Tweet.create!(:body => body, user_id: self.id)
-    TweetWorker.perform_async(tweet.id)
+  def tweet(params)
+    params[:timer] ||= 0
+    tweet = Tweet.create!(:body => params[:body], user_id: self.id)
+    TweetWorker.perform_in(params[:timer].to_i.minutes, tweet.id)
   end
 
   def twitter_client

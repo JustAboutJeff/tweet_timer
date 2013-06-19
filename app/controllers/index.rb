@@ -23,9 +23,9 @@ end
 
 post '/tweet' do
   if request.xhr?
-    current_user.tweet(params[:body])
+    current_user.tweet(params)
   else
-    current_user.tweet(params[:body])
+    current_user.tweet(params)
     erb :tweet
   end
 end
