@@ -4,12 +4,11 @@ $(function() {
     e.preventDefault();
 
     var tweetData = $('#tweetForm').serialize();
-    console.log(tweetData);
     
     $('div.response').empty();
     $("#tweetForm :input").attr("disabled", true);
-    $("<img id='wait' src='wait.gif' alt='waiting'>").appendTo('div.response');
-
+    $("<p><i id='wait' class='icon-spinner icon-spin icon4x'></i></p>").appendTo('div.response');
+    
     $.post('/tweet', tweetData)
     .done(function(){
       interval = setInterval(function(job){

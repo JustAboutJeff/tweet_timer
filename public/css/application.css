@@ -33,7 +33,7 @@ div.login {
   margin-left: -200px;
 }
 
-i.icon-twitter {
+i {
   display: inline-block;
   color: #F7FCF0;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.05);
