@@ -1,5 +1,9 @@
 get '/' do
-  erb :index
+  if logged_in?
+    erb :tweet
+  else
+    erb :index
+  end
 end
 
 get '/sign_in' do

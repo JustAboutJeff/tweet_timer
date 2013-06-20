@@ -1,8 +1,54 @@
+@import url(http://fonts.googleapis.com/css?family=Signika:400,700);
+
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  font-family: 'Signika', sans-serif;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  background: #2B8CBE;
+}
+body {
+  /* IE10 Consumer Preview */ 
+  background-image: -ms-linear-gradient(top, #E0F3DB 0%, #F7FCF0 100%);
+  /* Mozilla Firefox */ 
+  background-image: -moz-linear-gradient(top, #E0F3DB 0%, #F7FCF0 100%);
+  /* Opera */ 
+  background-image: -o-linear-gradient(top, #E0F3DB 0%, #F7FCF0 100%);
+  /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E0F3DB), color-stop(1, #F7FCF0));
+  /* Webkit (Chrome 11+) */ 
+  background-image: -webkit-linear-gradient(top, #E0F3DB 0%, #F7FCF0 100%);
+  /* W3C Markup, IE10 Release Preview */ 
+  background-image: linear-gradient(to bottom, #E0F3DB 0%, #F7FCF0 100%);
+}
+
+div.login {
+  color: #084081;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+}
+
+i.icon-twitter {
+  display: inline-block;
+  color: #F7FCF0;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.05);
+}
+
+div.control-group {
+  display: inline-block;
+  text-align: center;
+  padding: 0 0 0 0;
+  margin: 0 0 0 20px;
+}
+
+span.brand {
+  font-weight: 700;
+  font-size: 1em;
 }
 
 button a {
@@ -26,4 +72,52 @@ form#tweetForm  input[type=submit] {
 div.response {
   text-align: center;
 }
+
+a {
+  letter-spacing: 1px;
+  text-shadow: 1.5px 1.5px 0px #084081;
+  margin-bottom: 10px;
+  float: right;
+  color: #F7FCF0;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 24px 26px;
+  display: inline-block;
+  border-radius: 6px;
+  border: solid rgba(0,0,0,0.2);
+  border-width: 1px 1px 5px;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.1), inset 0 0 3px rgba(255,255,255,0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.4s ease;
+}
+
+a:hover { 
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.1), inset 0 0 1px rgba(255,255,255,0.4);
+  border-bottom-width: 8px;
+}
+
+a:active { 
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.1), inset 0 0 5px rgba(255,255,255,0.4);
+  border-bottom-width: 2px; transition:0.1s ease;
+}
+
+a.blue { 
+  background: hsl(205, 91%, 35%);
+
+}
+
+
+
+  <div class="login">
+    <div class="control-group">
+      <i class="icon-twitter icon-4x icon-reverse"></i>
+      <div class='slogan'>Welcome to <span class='brand'>Tweet Timer</span></div>
+    </div>
+      <a class="login" href="/sign_in">Login With Twitter</a>
+  </div>
+
+
 

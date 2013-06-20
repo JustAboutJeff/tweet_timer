@@ -11,7 +11,7 @@ $(function() {
     $("<img id='wait' src='wait.gif' alt='waiting'>").appendTo('div.response');
 
     $.post('/tweet', tweetData)
-    .done(function(jid){
+    .done(function(){
       interval = setInterval(function(job){
         $.get('/tweet/' + job, function(response, status){
           if (status === "success") {
@@ -21,7 +21,7 @@ $(function() {
             $("form#tweetForm :input").attr("disabled", false);
           }
         });  
-      } ,1000, jid); 
+      } ,1000); 
     })
     .fail(function(){
       clearInterval(interval);
