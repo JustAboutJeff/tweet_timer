@@ -9,26 +9,21 @@
   left: 10px;
   background: #2B8CBE;
 }
+
 body {
-  /* IE10 Consumer Preview */ 
-  background-image: -ms-linear-gradient(top, #E0F3DB 0%, #F7FCF0 100%);
-  /* Mozilla Firefox */ 
-  background-image: -moz-linear-gradient(top, #E0F3DB 0%, #F7FCF0 100%);
-  /* Opera */ 
-  background-image: -o-linear-gradient(top, #E0F3DB 0%, #F7FCF0 100%);
-  /* Webkit (Safari/Chrome 10) */ 
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E0F3DB), color-stop(1, #F7FCF0));
-  /* Webkit (Chrome 11+) */ 
-  background-image: -webkit-linear-gradient(top, #E0F3DB 0%, #F7FCF0 100%);
-  /* W3C Markup, IE10 Release Preview */ 
-  background-image: linear-gradient(to bottom, #E0F3DB 0%, #F7FCF0 100%);
+  background-image: -ms-linear-gradient(top, #F7FCF0 0%, #E0F3DB 100%);   /* IE10 Consumer Preview */ 
+  background-image: -moz-linear-gradient(top, #F7FCF0 0%, #E0F3DB 100%);   /* Mozilla Firefox */ 
+  background-image: -o-linear-gradient(top, #F7FCF0 0%, #E0F3DB 100%);   /* Opera */ 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F7FCF0), color-stop(1, #E0F3DB));   /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-linear-gradient(top, #F7FCF0 0%, #E0F3DB 100%);   /* Webkit (Chrome 11+) */ 
+  background-image: linear-gradient(to bottom, #F7FCF0 0%, #E0F3DB 100%);   /* W3C Markup, IE10 Release Preview */ 
 }
 
 div.login {
   color: #084081;
   position: absolute;
-  top: 45%;
-  left: 50%;
+  top: 48%;
+  left: 52%;
   margin-top: -100px;
   margin-left: -200px;
 }
@@ -37,13 +32,6 @@ i {
   display: inline-block;
   color: #F7FCF0;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.05);
-}
-
-div.control-group {
-  display: inline-block;
-  text-align: center;
-  padding: 0 0 0 0;
-  margin: 0 0 0 20px;
 }
 
 span.brand {
@@ -56,26 +44,56 @@ button a {
   color: black;
 }
 
+div.tweet {
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.15), 6px 6px 0px rgba(0,0,0,0.05), inset 0 0 0 4px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  color: #084081;
+  background: #F7FCF0;
+  padding: 1.5em;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+}
+
+div.tweet p {
+  text-align: center;
+}
+
+div.tweet > h2 {
+  text-align: center;
+}
+
+div.tweet > span#sign_out {
+  position: relative;
+  top: -3em;
+  left: 1.5em;
+  float: right;
+}
+
 form#tweetForm > textarea {
-  min-height: 100px;
-  max-height: 100px;
-  max-width: 98%;
-  min-width: 98%;
+  resize: none;
+  min-height: 75px;
+  max-height: 75px;
+  max-width: 99%;
+  min-width: 99%;
 }
 
-form#tweetForm > p {
+form#tweetForm > p > input[type=text] {
   text-align: center;
+  max-width: 2em;
+  min-width: 2em;
 }
 
-form#tweetForm  input[type=submit] {
-  width: 10em;
-}
-
-div.response {
+div.login > div.control-group {
+  display: inline-block;
   text-align: center;
+  padding: 0 0 0 0;
+  margin: 0 0 0 20px;
 }
 
-div.control-group a, input[type=submit] {
+div.control-group > a {
   letter-spacing: 1px;
   text-shadow: 1.5px 1.5px 0px #084081;
   margin-bottom: 10px;
@@ -85,6 +103,25 @@ div.control-group a, input[type=submit] {
   font-size: 1.1em;
   padding: 24px 26px;
   display: inline-block;
+  border-radius: 6px;
+  border: solid rgba(0,0,0,0.2);
+  border-width: 1px 1px 5px;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.1), inset 0 0 3px rgba(255,255,255,0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.4s ease;
+}
+
+input[type=submit] {
+  width: 11em;
+  display: block;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  text-shadow: 1.5px 1.5px 0px #084081;
+  color: #F7FCF0;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 24px 26px;
   border-radius: 6px;
   border: solid rgba(0,0,0,0.2);
   border-width: 1px 1px 5px;
@@ -110,14 +147,6 @@ div.control-group a.blue, input[type=submit].blue {
   background: hsl(205, 91%, 35%);
 }
 
-div.tweet {
-  color: #084081;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -200px;
-}
 
 a {
   text-decoration: none;
@@ -131,7 +160,7 @@ a:hover {
   -ms-transition: .5s;
   -moz-transition: .5s;
   -webkit-transition: .5s;
-  transition: .5s ease;
+  transition: 0.4s ease;
 }
 
 
