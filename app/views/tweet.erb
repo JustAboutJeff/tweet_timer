@@ -1,11 +1,13 @@
 <div class="container">
+  
+
 
   <div class="tweet">
     <span id="sign_out"><a href="/sign_out">Log Out</a></span>
     <h2>Schedule a tweet for <a href="http://www.twitter.com/<%= current_user.username %>" target="_blank">@<%= current_user.username %></a></h2>
 
     <form id="tweetForm" method="post" action="/tweet">
-      <textarea autofocus name='body' placeholder="Your tweet here..." maxlength="144"></textarea>
+      <textarea autofocus name='body' placeholder="Your tweet here..." maxlength="144" required=true></textarea>
       <p>
         <label for='timer'>tweet in</label>
         <input type='text' name='timer' maxlength='3' placeholder="2">
@@ -15,10 +17,9 @@
         <input class="blue" type='submit' value="Schedule">
       </div>
     </form>
-      
-    <div class='response'>
-    </div>
-    
+  </div>
+
+  <div class='response'>
   </div>
   
 </div>

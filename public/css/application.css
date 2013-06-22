@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Signika:400,700);
 
+*{
+  outline-color: transparent;
+}
+
 .container {
   font-family: 'Signika', sans-serif;
   position: fixed;
@@ -53,6 +57,7 @@ div.tweet {
   position: absolute;
   top: 40%;
   left: 50%;
+  max-height: 351px;
   margin-top: -100px;
   margin-left: -200px;
 }
@@ -66,8 +71,9 @@ div.tweet > h2 {
 }
 
 div.tweet > span#sign_out {
+  font-size: 12px;
   position: relative;
-  top: -3em;
+  top: -3.5em;
   left: 1.5em;
   float: right;
 }
@@ -112,10 +118,11 @@ div.control-group > a {
   transition: 0.4s ease;
 }
 
+
 input[type=submit] {
   width: 11em;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   letter-spacing: 1px;
   text-shadow: 1.5px 1.5px 0px #084081;
   color: #F7FCF0;
@@ -154,7 +161,6 @@ a {
 }
 
 a:hover {
-  border-bottom: 1px dotted;
   color: hsl(212, 87%, 44%);
   -o-transition: .5s;
   -ms-transition: .5s;
@@ -163,5 +169,58 @@ a:hover {
   transition: 0.4s ease;
 }
 
+input[type=text], textarea {
+  outline: none;
+  border: 2px solid #bdc3c7;
+  color: #084081;
+  font-size: 14px;
+  padding: 8px 5px;
+  height: 10px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: border .25s linear, color .25s linear;
+  -moz-transition: border .25s linear, color .25s linear;
+  -o-transition: border .25s linear, color .25s linear;
+  transition: border .25s linear, color .25s linear;
+  -webkit-backface-visibility: hidden;
+}
 
+input:focus, textarea:focus {
+  border: 2px solid #bdc3c7;
+  color: #4EB3D3;
+  font-size: 14px;
+  padding: 8px 5px;
+  height: 10px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: border .25s linear, color .25s linear;
+  -moz-transition: border .25s linear, color .25s linear;
+  -o-transition: border .25s linear, color .25s linear;
+  transition: border .25s linear, color .25s linear;
+  -webkit-backface-visibility: hidden;
+}
+
+div.response > h1, div.response > i {
+  text-align: center;
+  color: #F7FCF0;
+  position: absolute;
+  top: 42%;
+  left: 48%;
+  
+}
+
+div.response > h1 {
+  left: 42%;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.05);
+}
 
